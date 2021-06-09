@@ -30,7 +30,10 @@ app = Flask(__name__)
 app.secret_key = "SECRETKEY"
 
 labels_path = "TrainedModels/train_labels.csv"
-model_path = "TrainedModels/ds_weights_30_lr-1e05.pt"
+#model_path = "TrainedModels/ds_weights_30_lr-1e05.pt"
+
+model_path = "/srv/home/8vijayak/finalDisInfoCheckModule/TrainedModels/ds_weights_30_lr-1e05.pt"
+
 device = torch.device('cuda')
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
