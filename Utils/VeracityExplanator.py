@@ -1,12 +1,13 @@
 from transformers import pipeline, set_seed
-from KeywordExtractor import extract_keywords
-from WebCrawler import crawl_web
+from Utils.KeywordExtractor import extract_keywords
+from Utils.WebCrawler import crawl_web
 import spacy
 import numpy as np
 import pandas as pd
 
 import en_core_web_lg
 nlp = en_core_web_lg.load()
+#nlp = spacy.load("en_core_web_lg")
 
 def _load_gpt_model():
     generator = pipeline('text-generation', model='gpt2')
