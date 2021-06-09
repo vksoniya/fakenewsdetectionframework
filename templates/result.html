@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Enhancing Disinformation</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  
+  <!-- Custom styles for this template -->
+  <link href="static/css/landing-page.min.css" rel="stylesheet">
+
+  <!-- ajax for some dymanic components -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Fake New Detection & Enhancing Disinformation...</a>
+      <!--<a class="btn btn-primary" href="#">Sign In</a>-->
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Fact-Verification Result</h1>
+        </div>
+	<div class="col-xl-9 mx-auto">
+	<button id="btnVerifyAgain" type="button" class="btn btn-block btn-lg btn-primary" onclick="window.location.href='http://ltdemos.informatik.uni-hamburg.de/factcheck/';" >Verify Another Claim!</button>
+	</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Image Showcases -->
+  <!-- Prediction Section -->
+  <section class="showcase">
+    <div class="container-fluid p-0">
+
+      <!-- Entered Claim and Similar claims-->  
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2>Your Claim</h2>
+            <p class="lead mb-0">{{ input_claim }}</p>
+        </div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Extracted Keywords from Input Claim</h2>
+          <p class="lead mb-0">{{ extracted_keywords_input_claim }}</p>
+        </div>
+      </div>
+
+      <!-- Extracted Keywords and News Links--> 
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-1 showcase-text">
+            <h2>Veracity Prediction</h2>
+	          <p class="lead mb-0">{{ classifier_result }}</p>
+        </div>
+        <div class="col-lg-6 order-lg-1 showcase-text">
+          <!--<h2>Veracity Feedback</h4>
+          <p class="lead mb-0">What do you think the veracity of your input claim is?</p>
+          <form action = "feedback" method="POST">
+            <div class="form-row" show>
+              <div class="col-md-4"><input type="radio" name="veracityfeedback" id="true" value="true" required> True </input> </div>
+              <div class="col-md-4"><input type="radio" name="veracityfeedback" id="fake" value="fake"> Fake </input></div>
+              <div class="col-md-4"><input type="radio" name="veracityfeedback" id="unsure" value="unsure"> Unsure </input></div>
+            </div>
+            <div class="invisible" >
+              zxczxczx
+            </div>
+		    <button id="btnFeedback" type="submit" class="btn btn-block btn btn-link btn-outline-primary" >Submit!</button>
+	  </form>-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr style="width:90%;height:2px;border-width:2;color:gray;background-color:gray">
+
+    <!-- Justification Section-->
+    <section class="showcase bg-light">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-lg-12 order-lg-1 showcase-text">
+          <h2>Generated Justification</h2>
+          <div class="row"></div>
+            <div class="col-md-12"><p class="lead mb-0"><a>{{ generated_justification }}</a></p></div>
+          </div>
+        </div>
+       
+        <div class="col-lg-12 order-lg-1 showcase-text">
+          <h2>Extracted Keyword from Generated Justification</h2>
+          <div class="row">
+            <div class="col-md-12"><p class="lead mb-0"><a>{{ extracted_keywords_generated_justification }}</a></p></div>
+          </div>
+        </div>
+        <div class="col-lg-12 order-lg-1 showcase-text">
+          <h2 class="mt-0 ">Similar Claims from the Internet</h2>
+          <div class="row">
+            <table class="table table-dark">
+              {{ table | safe }}
+             </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr style="width:90%;height:2px;border-width:2;color:gray;background-color:gray">
+
+  <!-- Feedback section-->
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <form action = "feedback" method="POST">
+        <div class="row no-gutters">
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2>Veracity Feedback</h4>
+            <p class="lead mb-0">What do you think the veracity of your input claim is?</p>
+            <div class="form-row" show>
+              <div class="col-md-4"><input type="radio" name="veracityfeedback" id="true" value="true" required> True </input> </div>
+              <div class="col-md-4"><input type="radio" name="veracityfeedback" id="fake" value="fake"> Fake </input></div>
+              <div class="col-md-4"><input type="radio" name="veracityfeedback" id="unsure" value="unsure"> Unsure </input></div>
+            </div>
+            <div class="invisible" >
+              zxczxczx
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2>Justification Feedback</h4>
+            <p class="lead mb-0">Is the generated justification useful?</p>
+            <div class="form-row" show>
+              <div class="col-md-4"><input type="radio" name="justificationfeedback" id="yes" value="yes" required> Yes </input> </div>
+              <div class="col-md-4"><input type="radio" name="justificationfeedback" id="no" value="no"> No </input></div>
+              <div class="col-md-4"><input type="radio" name="justificationfeedback" id="unsure" value="unsure"> Unsure </input></div>
+            </div>
+            <div class="invisible" >
+              zxczxczx
+            </div>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-lg-12 order-lg-1 showcase-text">
+            <h2>Justification Textual Feedback</h2>
+            <div class="row">
+              <div class="col-md-12"><textarea class="form-control" rows="5" id="justificationFeedbackText" name="justificationFeedbackText" placeholder="Write justification in your own words..."></textarea></div>
+            </div>
+            <div class="col-lg-12 order-lg-1 showcase-text">
+              <div class="row">
+                <div class="col-md-12"><button id="btnFeedback" type="submit" class="btn btn-block btn-lg btn-primary" >Submit Feedback!</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="testimonials text-center">
+    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+      <div class="form-row">
+	 <button id="btnVerifyAgain" type="button" class="btn btn-block btn-lg btn-primary" onclick="window.location.href='http://ltdemos.informatik.uni-hamburg.de/factcheck/';" >Verify Another Claim!</button>
+      </div>
+    </div>
+   </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Soniya Vijayakumar (LT-UHH) 2021. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
