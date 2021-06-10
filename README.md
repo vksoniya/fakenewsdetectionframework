@@ -134,9 +134,6 @@ The following is the screenshot of the HTML5 client, when opened in a browser:
 ![HomePageScreenshot](images/WebsiteHomepage.png)
 
 
-Note: environement depdency 
-
-
 ## License
 
 This project is open source for everyone. 
