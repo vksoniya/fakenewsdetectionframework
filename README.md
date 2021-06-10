@@ -1,10 +1,34 @@
 # Fake News Detection Framework with Journalist-in-the-Loop
 
-This repository contains the code for the Fake News Detection Framework implemented as a part of my master thesis under M.Sc. in Intelligent Adaptive Systems. The framework is built and implemented to assist end-users/journalists in their fact-verification process. The complete thesis is present here (add pdf of the report)
+This repository contains the code for the Fake News Detection Framework implemented as a part of my master thesis under M.Sc. in Intelligent Adaptive Systems. The framework is built and implemented to assist end-users/journalists in their fact-verification process. The complete thesis is present [here](add pdf of the report)
+
+
+#### Notebooks
+The are three notebooks available in this repository that corresponds to dataset creation, analysis, model fine-tuning and their evaluations:
+
+1. BERT Fine Tuning (Veracity Classifier)
+2. Knowledge Base & Datasets
+3. T5 Fine Tuning and Evaluation (Justification Generator)
+
+GPT-2 model was fine-tuned using google collab notebook [here](https://colab.research.google.com/drive/1c-cwTLzC30u5F4PfYT6jylpBC_zS_zEQ?usp=sharing). 
+
+#### Utils
+The utils folder consists of the code corresponding to the modules implemented in the Veracity Prediction, Veracity Explanation and Journalists-in-the-Loop component of the framework. The following figures illustrate the high-level and low-level architectures of the framework:
+
+#### Fake News Detection Framework High-Level Architecture
+![HighLevelArchitecture](images/hld.jpg)
+
+#### Veracity Prediction Low-Level Architecture
+![VPLowLevelArchitecture](images/veracitypredictionarchi1.png)
+
+#### Veracity Explanation Low-Level Architecture
+![VELowLevelArchitecture](images/veracityexplanationarchi1.png)
+
+
 
 ## Using the Server
 
-### Hardware Prerequisite
+### Hardware Prerequisites
 The framework uses two fine-tuned transformer models, BERT and T5. They both are computationally heavy, hence require GPUs for running the server.
 
 Depending on the GPU available, edit the lines in srvFakeNewsDetection.py
@@ -15,7 +39,7 @@ os.environ["CUDA_VISIBLE_DEVICES"]="5"
 
 ```
 
-### Software Prerequisite
+### Software Prerequisites
 1. The server is a Flask-based server and can be run either on local host or using a public IP for external access. The current port number is set to '5001', which can be changed as required.
 
 2. The library requirement are contained in the requirements.txt file. I suggest to create a python 3 virtual environment to avoid version related issues while installing the requirements. 
@@ -57,7 +81,7 @@ python3 srvFakeNewsDetection.py
 
 ```
 
-The following should be the expected outputs:
+The following should be the expected terminal outputs:
 
 <pre>Current Device ID is:0
 Class Weights: [1.02800445 0.97348086]
@@ -68,6 +92,10 @@ Class Weights: [1.02800445 0.97348086]
  * Debug mode: off
  * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
 </pre>
+
+The following is the screenshot of the HTML5 client, when opened in a browser:
+
+![HomePageScreenshot](images/WebsiteHomepage.png)
 
 
 Note: environement depdency 
