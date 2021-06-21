@@ -1,0 +1,35 @@
+{
+    "cnn": {
+        "rss": "http://rss.cnn.com/rss/edition_world.rss"
+    },
+    "bbc": {
+        "rss": "http://feeds.bbci.co.uk/news/rss.xml"
+    },
+    "theguardian": {
+        "rss": "https://www.theguardian.com/uk/rss"
+    },
+    "breitbart": {
+        "rss": "http://feeds.feedburner.com/breitbart"
+    },
+    "foxnews": {
+        "rss": "http://feeds.foxnews.com/foxnews/latest"
+    },
+    "nbcnews": {
+        "rss": "http://www.nbcnews.com/id/3032091/device/rss/rss.xml"
+    },
+    "washingtonpost": {
+        "rss": "http://feeds.washingtonpost.com/rss/world"
+    },
+    "theonion": {
+        "rss": "http://www.theonion.com/feeds/rss"
+    },
+    "aljazeera": {
+        "rss": "aljazeera.com/xml/rss/all.xml"
+    },
+    "dw": {
+        "rss": "https://rss.dw.com/rdf/rss-en-all"
+    },
+    "france24": {
+        "rss": "https://www.france24.com/en/rss"
+    }
+}

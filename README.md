@@ -34,7 +34,9 @@ Three tranfomer models are fine-tuned using the above datasets and the respectiv
 2. T5 Fine-Tuning and Evaluation (Justification Generator)
 3. GPT-2 Fine-Tuning on [Google collab notebook](https://colab.research.google.com/drive/1c-cwTLzC30u5F4PfYT6jylpBC_zS_zEQ?usp=sharing). 
 
-Note: The fine-tuned models are not available in this repo, please use the above notebooks to fine-tune them and add them to the 'TrainedModels' folder for using the framework
+Note: The fine-tuned models are not available in this repo, please use the above notebooks to fine-tune them and add them to the 'TrainedModels' folder for using the framework. 
+
+The datasets and trained models is available in this [repository](http://ltdata1.informatik.uni-hamburg.de/factverify/) 
 
 
 ## Framework Implementation
@@ -93,7 +95,7 @@ The templates and static folders contain the HTML5 templates and CSS content for
 
 ### Utils
 
-The utils folder consists of the code corresponding to the modules implemented in the Veracity Prediction, Veracity Explanation and Journalists-in-the-Loop component of the framework. The following figures illustrate the high-level and low-level architectures of the framework:
+The utils folder consists of the code corresponding to the modules implemented in the Veracity Prediction, Veracity Explanation and Journalists-in-the-Loop component of the framework. The JSON files contain the URLs of the online news sources that is used to crawl the web. The following figures illustrate the high-level and low-level architectures of the framework:
 
 #### Fake News Detection Framework High-Level Architecture
 ![HighLevelArchitecture](images/hld.jpg)

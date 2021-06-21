@@ -1,0 +1,38 @@
+{
+    "cnn": {
+        "link": "http://edition.cnn.com/"
+    },
+    "bbc": {
+        "link": "http://www.bbc.com/"
+    },
+    "theguardian": {
+        "link": "https://www.theguardian.com/international"
+    },
+    "breitbart": {
+        "link": "http://www.breitbart.com/"
+    },
+    "infowars": {
+        "link": "https://www.infowars.com/"
+    },
+    "foxnews": {
+        "link": "http://www.foxnews.com/"
+    },
+    "nbcnews": {
+        "link": "http://www.nbcnews.com/"
+    },
+    "washingtonpost": {
+        "link": "https://www.washingtonpost.com/"
+    },
+    "theonion": {
+        "link": "http://www.theonion.com/"
+    },
+    "aljazeera": {
+        "link": "https://www.aljazeera.com/"
+    },
+    "dw": {
+        "link": "https://www.dw.com/en/top-stories/s-9097"
+    },
+    "france24": {
+        "link": "https://www.france24.com/en/"
+    }
+}
