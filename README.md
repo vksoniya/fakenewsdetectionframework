@@ -16,7 +16,7 @@ This repository contains the code for the Fake News Detection Framework implemen
 
 ## Knowledge Base & Datasets
 
-The knowledge base created as a part of this framework implementation, known as the Comprehensive Knowledge Base (CompKB), can be found under the Datasets Folder (add this) (check if this needs to be added)
+The knowledge base created as a part of this framework implementation, known as the Comprehensive Knowledge Base (CompKB),  can be found under the Datasets Folder. Currently, they are available [here](http://ltdata1.informatik.uni-hamburg.de/factverify/) and needs to be placed under the Datasets folder, as per the configurable path requirement in the notebooks.  
 
 The following are the datasets used:
 1. TrueFake Dataset
@@ -34,9 +34,9 @@ Three tranfomer models are fine-tuned using the above datasets and the respectiv
 2. T5 Fine-Tuning and Evaluation (Justification Generator)
 3. GPT-2 Fine-Tuning on [Google collab notebook](https://colab.research.google.com/drive/1c-cwTLzC30u5F4PfYT6jylpBC_zS_zEQ?usp=sharing). 
 
-Note: The fine-tuned models are not available in this repo, please use the above notebooks to fine-tune them and add them to the 'TrainedModels' folder for using the framework. 
+Note: The fine-tuned models are not available in this repository, please use the above notebooks to fine-tune them and add them to the 'TrainedModels' folder for using the framework. 
 
-The datasets and trained models is available in this [repository](http://ltdata1.informatik.uni-hamburg.de/factverify/) 
+The datasets and trained models used in our framework is available in this [repository](http://ltdata1.informatik.uni-hamburg.de/factverify/) 
 
 
 ## Framework Implementation
@@ -115,9 +115,11 @@ Once the above prerequites are met, the Flask server can be activated.
 Run the following command to activate the server:
 
 ```
-python3 srvFakeNewsDetection.py
+CUDA_VISIBLE_DEVICES"]="X" python3 srvFakeNewsDetection.py
 
 ```
+
+Replace X with the respective GPU device number.
 
 The following should be the expected terminal outputs:
 
