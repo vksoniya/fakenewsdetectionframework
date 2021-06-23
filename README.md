@@ -1,6 +1,6 @@
 # Fake News Detection Framework with Journalist-in-the-Loop
 
-This repository contains the code for the Fake News Detection Framework implemented as a part of my master thesis under M.Sc. in Intelligent Adaptive Systems. The framework is built and implemented to assist end-users/journalists in their fact-verification process. The complete thesis is present [here](add pdf of the report)
+This repository contains the code for the Fake News Detection Framework implemented as a part of my master thesis under M.Sc. in Intelligent Adaptive Systems. The framework is built and implemented to assist end-users/journalists in their fact-verification process. The thesis is present [here](https://www.inf.uni-hamburg.de/en/inst/ab/lt/teaching/theses/completed-theses/2021-ma-vijayakumar.pdf)
 
 ## Table of contents
 
