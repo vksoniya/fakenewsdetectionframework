@@ -112,6 +112,14 @@ The utils folder consists of the code corresponding to the modules implemented i
 
 Once the above prerequites are met, the Flask server can be activated.
 
+As an alternate way, run the following script for quick installation (make sure that the requirements are installed in a virtual environment to avoid version conflicts):
+
+```
+./quickinstall.sh
+
+```
+
+
 Run the following command to activate the server:
 
 ```
