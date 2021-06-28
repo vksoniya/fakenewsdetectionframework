@@ -43,8 +43,14 @@ else:
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="5"  # specify which GPU(s) to be used
-print("Current Device ID is:" + str(torch.cuda.current_device()))
-torch.cuda.empty_cache()
+
+if torch.cuda.is_available():
+    print("Current Device ID is:" + str(torch.cuda.current_device()))
+    torch.cuda.empty_cache()
+else:
+    print("We are running on CPU")
+
+
 ButtonPressed = 0
 
 folder = "PipelineOutputs"
