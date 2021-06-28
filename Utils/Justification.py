@@ -5,7 +5,7 @@ import math
 import operator
 import re
 import nltk
-#nltk.download('wordnet')
+nltk.download('wordnet')
 #nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt') # one time execution
 nltk.download('stopwords')
