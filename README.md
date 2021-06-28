@@ -123,6 +123,7 @@ python3 -m spacy download en_core_web_lg
 
 
 Run the following command to activate the server:
+If on GPU:
 
 ```
 CUDA_VISIBLE_DEVICES="X" python3 srvFakeNewsDetection.py
@@ -131,7 +132,14 @@ CUDA_VISIBLE_DEVICES="X" python3 srvFakeNewsDetection.py
 
 Replace X with the respective GPU device number.
 
-The following should be the expected terminal outputs:
+If on CPU:
+
+```
+python3 srvFakeNewsDetection.py
+
+```
+
+The following should be the expected terminal outputs (for GPU):
 
 <pre>Current Device ID is:0
 Class Weights: [1.02800445 0.97348086]
