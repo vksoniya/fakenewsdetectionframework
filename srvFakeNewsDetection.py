@@ -36,20 +36,15 @@ model_path = "TrainedModels/ds_weights_30_lr-1e05.pt"
 
 if torch.cuda.is_available():
     device = torch.device('cuda')
-else:
-    device = torch.device('cpu')
-
-#device = torch.device('cuda')
-
-os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"]="5"  # specify which GPU(s) to be used
-
-if torch.cuda.is_available():
     print("Current Device ID is:" + str(torch.cuda.current_device()))
     torch.cuda.empty_cache()
+    os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+    os.environ["CUDA_VISIBLE_DEVICES"]="5"  # specify which GPU(s) to be used
 else:
+    device = torch.device('cpu')
     print("We are running on CPU")
 
+#device = torch.device('cuda')
 
 ButtonPressed = 0
 
