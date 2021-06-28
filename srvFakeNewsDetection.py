@@ -34,7 +34,12 @@ model_path = "TrainedModels/ds_weights_30_lr-1e05.pt"
 
 #model_path = "/srv/home/8vijayak/finalDisInfoCheckModule/TrainedModels/ds_weights_30_lr-1e05.pt"
 
-device = torch.device('cuda')
+if torch.cuda.is_available():
+    device = torch.device('cuda')
+else:
+    device = torch.device('cpu')
+
+#device = torch.device('cuda')
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="5"  # specify which GPU(s) to be used

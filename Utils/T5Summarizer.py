@@ -11,6 +11,7 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 import os
 import torch
 os.environ["CUDA_VISIBLE_DEVICES"] = "7"
+
 torch.cuda.current_device()
 
 TRAIN_BATCH_SIZE = 2    # input batch size for training (default: 64)
@@ -121,7 +122,12 @@ def getsummaryusingT5(_df_predictionset):
     path = "TrainedModels/T5NewsSummary_ds_weights_30_lr-0.0001.pt"
     fine_tuned_T5_model.load_state_dict(torch.load(path))
     
-    device = torch.device('cuda')
+    if torch.cuda.is_available():
+        device = torch.device('cuda')
+    else:
+        device = torch.device('cpu')
+    
+    #device = torch.device('cuda')
     TEST_EPOCHS = 1
     finetunedT5_liar_summaries_df = {}
     print('FineTuned T5 Model')
