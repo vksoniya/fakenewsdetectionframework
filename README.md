@@ -117,7 +117,7 @@ As an alternate way, run the following script for quick installation (make sure 
 ```
 ./quickinstall.sh
 source activatevenv.sh
-
+python3 -m spacy download en_core_web_lg
 
 ```
 
@@ -125,7 +125,7 @@ source activatevenv.sh
 Run the following command to activate the server:
 
 ```
-CUDA_VISIBLE_DEVICES"]="X" python3 srvFakeNewsDetection.py
+CUDA_VISIBLE_DEVICES="X" python3 srvFakeNewsDetection.py
 
 ```
 
