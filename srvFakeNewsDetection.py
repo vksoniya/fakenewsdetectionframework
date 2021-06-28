@@ -116,7 +116,11 @@ weights = weights.to(device)
 # define the loss function
 cross_entropy  = nn.NLLLoss(weight=weights) 
 
-model.load_state_dict(torch.load(model_path))
+if torch.cuda.is_available():
+    model.load_state_dict(torch.load(model_path))
+else:
+    model.load_state_dict(torch.load(model_path, , map_location=torch.device('cpu')))
+
 
 #Prediction function
 def predict(model, test_dataloader, verbose=False):
