@@ -7,8 +7,8 @@ import re
 import nltk
 #nltk.download('wordnet')
 #nltk.download('averaged_perceptron_tagger')
-#nltk.download('punkt') # one time execution
-#nltk.download('stopwords')
+nltk.download('punkt') # one time execution
+nltk.download('stopwords')
 from nltk.tokenize import sent_tokenize
 from nltk.tokenize import sent_tokenize,word_tokenize
 from nltk.stem import WordNetLemmatizer
