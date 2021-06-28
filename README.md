@@ -73,7 +73,7 @@ pip3 intall -r requirements.txt
 Run the following command to download it:
 
 ```
-python3 -m spacy download en_core_web_l
+python3 -m spacy download en_core_web_lg
 
 ```
 
@@ -116,6 +116,8 @@ As an alternate way, run the following script for quick installation (make sure 
 
 ```
 ./quickinstall.sh
+source activatevenv.sh
+
 
 ```
 
