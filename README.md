@@ -55,6 +55,8 @@ os.environ["CUDA_VISIBLE_DEVICES"]="5"
 
 ### Software Prerequisites
 
+The framework s built and tested using Python 3.8.5 and pip 20.2.4. 
+
 1. The server is a Flask-based server and can be run either on local host or using a public IP for external access. The current port number is set to '5001', which can be changed as required.
 
 2. The library requirement are contained in the requirements.txt file. I suggest to create a python 3 virtual environment to avoid version related issues while installing the requirements. 
