@@ -111,6 +111,7 @@ The utils folder consists of the code corresponding to the modules implemented i
 ## Using the Server
 
 Once the above prerequites are met, the Flask server can be activated.
+Server configurations such as port and host information should be update in the config.txt
 
 As an alternate way, run the following script for quick installation (make sure that the requirements are installed in a virtual environment to avoid version conflicts):
 

@@ -24,6 +24,16 @@ from Utils.VeracityExplanator import generateExplantion, extractEvidence
 from Utils.Justification import generateJustificationText
 from Utils.SimilarClaimExtractor import extractCosineSimilarityText
 
+#Configuration Code
+import configparser
+configParser = configparser.RawConfigParser()
+configFilePath = 'config.txt'
+configParser.read(configFilePath)
+
+HOST = configParser.get('server', 'host')
+PORT = configParser.get('server', 'port')
+#Configuration Code
+
 #from Utils.T5Summarizer import getsummaryusingT5
 
 app = Flask(__name__)
@@ -431,4 +441,4 @@ def get_feedback():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=False, port='5001')
+    app.run(host=HOST, debug=False, port=PORT)
